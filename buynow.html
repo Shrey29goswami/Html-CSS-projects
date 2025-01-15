@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Payment Options</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .payment-form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            color: #555;
+            margin-bottom: 8px;
+        }
+        .payment-options {
+            display: flex;
+            flex-direction: column;
+        }
+        .payment-options label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        .payment-options img {
+            width: 60px;
+        }
+        .button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            width: 100%;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="payment-form">
+        <h2>Choose Your Payment Option</h2>
+        
+        <div class="form-group">
+            <label for="paymentType">Payment Type:</label>
+            <select id="paymentType" name="paymentType" required>
+                <option value="">Select a payment method</option>
+                <option value="card">Card</option>
+                <option value="online">Online Payment</option>
+                <option value="cod">Cash on Delivery</option>
+            </select>
+        </div>
+        
+        <div class="form-group payment-options">
+            <label><input type="radio" name="onlineMethod" value="paytm" required> 
+                <img src="paytm.jpeg" alt="Paytm">
+            </label>
+            <label><input type="radio" name="onlineMethod" value="paypal"> 
+                <img src="paypal.jpeg" alt="PayPal">
+            </label>
+            <label><input type="radio" name="onlineMethod" value="phonepay"> 
+                <img src="phonepay.jpeg" alt="PhonePe">
+            </label>
+        </div>
+        
+        <a href="buynow2.html" class="button" type="submit">Proceed to Payment</a>
+    </div>
+
+</body>
+</html>

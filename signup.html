@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Strength Validation</title>
+    <style>
+        body {
+            background-color: rgb(45, 52, 54);
+            margin: 0;
+            padding: 0;
+            font-family: "Montserrat Subrayada", serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        table {
+            background-color: whitesmoke;
+            border-collapse: separate;
+            border-spacing: 0;
+            width: 400px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        td {
+            padding: 15px;
+        }
+
+        td[colspan="2"] {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            background-color: #f9f9f9;
+            color: #030303;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        label {
+            font-size: 14px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid aqua;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        input:focus {
+            border-color: #d35400;
+            outline: none;
+        }
+
+        input:valid {
+            border-color: green;
+        }
+
+        input:invalid {
+            border-color: red;
+        }
+
+        .button {
+            padding: 12px 30px;
+            background-color: #d35400;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #e67e22;
+        }
+
+        .password-hint {
+            font-size: 12px;
+            color: #666;
+            text-align: left;
+        }
+
+        .password-hint ul {
+            padding: 0;
+            margin: 0;
+            list-style: circle;
+        }
+
+        .password-hint li {
+            font-size: 8px;
+            color: red;
+        }
+
+        input:valid ~ .password-hint li {
+            color: green;
+        }
+
+        p {
+            margin: 0;
+            font-size: 14px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td colspan="2">Login</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <form action="/submit-login" method="POST">
+                    <table cellpadding="15" cellspacing="0" width="100%">
+                        <tr>
+                            <td align="right"><label for="username">Username:</label></td>
+                            <td><input type="text" id="username" name="username" placeholder="Enter your username" required></td>
+                        </tr>
+                        <tr>
+                            <td align="right"><label for="password">Password:</label></td>
+                            <td>
+                                <input type="password" id="password" name="password" placeholder="Enter your password" 
+                                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}" 
+                                    title="Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one number, and one special character (!@#$%^&*)." 
+                                    required>
+                                <div class="password-hint">
+                                    <ul>
+                                        <li>Password must be at least 8 characters long.</li>
+                                        <li>Include at least one uppercase letter.</li>
+                                        <li>Include at least one lowercase letter.</li>
+                                        <li>Include at least one number.</li>
+                                        <li>Include at least one special character (!@#$%^&*).</li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="center">
+                                <a href="register.html" class="button" type="submit">Login</a>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <p>Don't have an account? <a href="/register">Register here</a> <a href="/register">Forgot Password</a></p>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
