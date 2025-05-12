@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Payment</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f2f5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .payment-container {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .payment-container h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #333;
+    }
+
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #444;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 0.75rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    .form-group input:focus {
+      border-color: #6c63ff;
+      outline: none;
+    }
+
+    .payment-btn {
+      width: 100%;
+      padding: 0.75rem;
+      background: #6c63ff;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .payment-btn:hover {
+      background: #574fd6;
+    }
+
+    .card-icons {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    .card-icons img {
+      width: 40px;
+      margin: 0 8px;
+      opacity: 0.7;
+    }
+
+    .card-icons img:hover {
+      opacity: 1;
+    }
+
+    .note {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #888;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="payment-container">
+    <h2>Payment Details</h2>
+    <div class="card-icons">
+      <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa">
+      <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="Mastercard">
+      <img src="https://img.icons8.com/color/48/000000/paypal.png" alt="PayPal">
+    </div>
+    <form>
+      <div class="form-group">
+        <label for="cardholder">Cardholder Name</label>
+        <input type="text" id="cardholder" name="cardholder" placeholder="John Doe">
+      </div>
+      <div class="form-group">
+        <label for="cardnumber">Card Number</label>
+        <input type="text" id="cardnumber" name="cardnumber" placeholder="1234 5678 9012 3456">
+      </div>
+      <div class="form-group">
+        <label for="expiry">Expiry Date</label>
+        <input type="text" id="expiry" name="expiry" placeholder="MM/YY">
+      </div>
+      <div class="form-group">
+        <label for="cvv">CVV</label>
+        <input type="password" id="cvv" name="cvv" placeholder="123">
+      </div>
+      <button class="payment-btn" type="submit">Pay Now</button>
+    </form>
+    <div class="note">All transactions are secure and encrypted 🔒</div>
+  </div>
+
+</body>
+</html>
